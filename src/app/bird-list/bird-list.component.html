@@ -1,0 +1,10 @@
+<h2>Birds</h2>
+<ul>
+  <li *ngFor="let bird of birds">
+    <app-bird-listing
+      [name]="bird.name"
+      [quantity]="bird.quantity"
+      [location]="bird.location"
+    ></app-bird-listing>
+  </li>
+</ul>
