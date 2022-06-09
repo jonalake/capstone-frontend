@@ -6,6 +6,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
+  color: #4c4c4c;
 }
 
 header {
@@ -16,11 +17,12 @@ header {
 h1 {
   text-transform: uppercase;
   font-size: 40px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 h1 b {
-  font-weight: 400;
+  font-weight: 600;
+  color: #306645;
 }
 
 h1,
@@ -54,8 +56,18 @@ li {
   grid-template-rows: auto 1fr;
   grid-template-columns: 150px 1fr;
   margin-bottom: 24px;
-  border: 1px solid black;
+  color: #eef7f1;
+  background-color: #306645;
   border-radius: 15px;
+}
+
+.bird-listing:hover {
+  background-color: #418b5d;
+  transition: all .15s ease;
+}
+
+.bird-listing:active {
+  transform: scale(0.99);
 }
 
 img {
@@ -63,4 +75,74 @@ img {
   padding: 25px;
   grid-column: 1 / span 1;
   grid-row: 1 / span 2;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 25px;
+  padding: 18px 83px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #306645;
+  border: 1px solid #306645;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #306645;
+  border: 1px solid #306645;
+  color: #eef7f1;
+  transition: all .15s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+  color: #306645;
+  border: 1px solid #306645;
+  background-color: #eef7f1;
+}
+
+button+button {
+  margin-left: 25px;
+}
+
+.add-bird-form {
+  width: 500px;
+}
+
+input,
+label {
+  display: block;
+  width: 480px;
+}
+
+label {
+  color: #306645;
+  margin-bottom: 5px;
+}
+
+input {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #306645;
+  border-radius: 5px;
+}
+
+
+
+#submit {
+  width: 100%;
+  color: #eef7f1;
+  background-color: #306645;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  box-shadow: 0 2px 1px #306645;
 }

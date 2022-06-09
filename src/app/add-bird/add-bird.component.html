@@ -1,0 +1,10 @@
+<h2>Add Bird</h2>
+<form #addBirdForm="ngForm" class="add-bird-form" (ngSubmit)="addBird()">
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name" placeholder="American Robin, etc." required [(ngModel)]="name">
+  <label for="quantity">Number Seen</label>
+  <input type="number" name="quantity" id="quantity" placeholder="0" required [(ngModel)]="quantity">
+  <label for="location">Location</label>
+  <input type="text" name="location" id="location" placeholder="Denver, etc." required [(ngModel)]="location">
+  <button id="submit" type="submit">Add Bird</button>
+</form>
