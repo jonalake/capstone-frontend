@@ -1,0 +1,30 @@
+.bird {
+  display: grid;
+  justify-items: center;
+}
+
+img {
+  max-width: 200px;
+  padding-top: 5px;
+}
+
+p {
+  margin-left: 0;
+}
+
+button {
+  margin: 10px;
+}
+
+button+button {
+  background-color: #fff;
+  border: 1px solid #306645;
+  color: #306645;
+}
+
+button+button:hover {
+  background-color: #418b5d;
+  border: 1px solid #418b5d;
+  color: #eef7f1;
+  transition: all .15s ease;
+}

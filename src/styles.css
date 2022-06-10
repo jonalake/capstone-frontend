@@ -63,13 +63,13 @@ li {
   grid-template-columns: 150px 1fr;
   margin-bottom: 24px;
   color: #306645;
-  background-color: #fff;
   border: 2px solid #306645;
   border-radius: 15px;
 }
 
 .bird-listing:hover {
   background-color: #418b5d;
+  border: 2px solid #418b5d;
   color: #eef7f1;
   transition: all .15s ease;
 }

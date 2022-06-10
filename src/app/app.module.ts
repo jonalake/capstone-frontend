@@ -9,6 +9,7 @@ import { BirdListingComponent } from './bird-listing/bird-listing.component';
 import { BirdListComponent } from './bird-list/bird-list.component';
 import { AddBirdComponent } from './add-bird/add-bird.component';
 import { BirdComponent } from './bird/bird.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BirdComponent } from './bird/bird.component';
     BirdListingComponent,
     BirdListComponent,
     AddBirdComponent,
-    BirdComponent
+    BirdComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

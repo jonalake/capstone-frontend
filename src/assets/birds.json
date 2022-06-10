@@ -7,12 +7,12 @@
   },{
     "id": 2,
     "name": "Mountain Chickadee",
-    "quantity": 2,
+    "quantity": 4,
     "location": "Woodland Park"
   },{
     "id": 3,
     "name": "Western Tanager",
-    "quantity": 1,
+    "quantity": 2,
     "location": "Colorado Springs"
   },{
     "id": 4,
