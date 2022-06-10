@@ -25,7 +25,7 @@ export class AddBirdComponent implements OnInit {
     console.log(newBird)
 
     this.name = "";
-    this.quantity = 0;
+    this.quantity = 1;
     this.location = "";
   }
 }

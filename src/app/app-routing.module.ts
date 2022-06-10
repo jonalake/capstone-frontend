@@ -1,7 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddBirdComponent } from './add-bird/add-bird.component';
+import { BirdListComponent } from './bird-list/bird-list.component';
+import { BirdComponent } from './bird/bird.component';
 
-const routes: Routes = [];
+const routes: Routes = [{
+  path: '',
+  redirectTo: "/birds",
+  pathMatch: "full"
+}, {
+  path: 'birds',
+  component: BirdListComponent
+}, {
+  path: 'birds/:id',
+  component: BirdComponent
+}, {
+  path: 'add',
+  component: AddBirdComponent
+}]
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,10 +1,18 @@
 <h2>Birds</h2>
+<div class="controls">
+    <a routerLink="/add">
+      <button>Add Birds</button>
+    </a>
+    <button>Filter</button>
+</div>
 <ul>
   <li *ngFor="let bird of birds">
-    <app-bird-listing
-      [name]="bird.name"
-      [quantity]="bird.quantity"
-      [location]="bird.location"
-    ></app-bird-listing>
+    <a routerLink="/birds/{{bird.id}}">
+      <app-bird-listing
+        [name]="bird.name"
+        [quantity]="bird.quantity"
+        [location]="bird.location"
+      ></app-bird-listing>
+    </a>
   </li>
 </ul>

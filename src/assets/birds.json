@@ -1,0 +1,23 @@
+{
+  "birds": [{
+    "id": 1,
+    "name": "American Robin",
+    "quantity": 3,
+    "location": "Colorado Springs"
+  },{
+    "id": 2,
+    "name": "Mountain Chickadee",
+    "quantity": 2,
+    "location": "Woodland Park"
+  },{
+    "id": 3,
+    "name": "Western Tanager",
+    "quantity": 1,
+    "location": "Colorado Springs"
+  },{
+    "id": 4,
+    "name": "Great Blue Heron",
+    "quantity": 1,
+    "location": "Fountain"
+  }]
+}

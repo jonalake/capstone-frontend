@@ -12,8 +12,8 @@ export class BirdListComponent implements OnInit {
   constructor(private birdService: BirdService) { }
 
   ngOnInit(): void {
-    this.birdService.getBirds().subscribe(birds => {
-      return this.birds = birds
+    this.birdService.getBirds().subscribe(response => {
+      return this.birds = response.birds
     })
   }
 

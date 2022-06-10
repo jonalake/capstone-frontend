@@ -5,6 +5,7 @@
 body {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-family: 'Montserrat', sans-serif;
   color: #4c4c4c;
 }
@@ -37,12 +38,17 @@ h2 {
 
 h3 {
   font-weight: 600;
-  margin-top: 40px;
+  margin-top: 55px;
   margin-bottom: 20px;
 }
 
 p {
   margin-bottom: 20px;
+}
+
+h3,
+p {
+  margin-left: 25px;
 }
 
 li {
@@ -56,13 +62,15 @@ li {
   grid-template-rows: auto 1fr;
   grid-template-columns: 150px 1fr;
   margin-bottom: 24px;
-  color: #eef7f1;
-  background-color: #306645;
+  color: #306645;
+  background-color: #fff;
+  border: 2px solid #306645;
   border-radius: 15px;
 }
 
 .bird-listing:hover {
   background-color: #418b5d;
+  color: #eef7f1;
   transition: all .15s ease;
 }
 
@@ -77,39 +85,40 @@ img {
   grid-row: 1 / span 2;
 }
 
-nav {
+.controls {
   display: flex;
   justify-content: center;
 }
 
 button {
+  width: 235px;
+  margin-bottom: 25px;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 25px;
-  padding: 18px 83px;
+  padding: 18px 0px;
   font-size: 16px;
   font-weight: 600;
-  color: #306645;
+  color: #eef7f1;
   border: 1px solid #306645;
-  background-color: #fff;
+  background-color: #306645;
   border-radius: 10px;
 }
 
 button:hover {
-  background-color: #306645;
-  border: 1px solid #306645;
+  background-color: #418b5d;
+  border: 1px solid #418b5d;
   color: #eef7f1;
   transition: all .15s ease;
 }
 
 button:active {
   transform: scale(0.98);
-  color: #306645;
-  border: 1px solid #306645;
-  background-color: #eef7f1;
+  color: #eef7f1;
+  border: 1px solid #418b5d;
+  background-color: #418b5d;
 }
 
-button+button {
-  margin-left: 25px;
+a button {
+  margin-right: 35px;
 }
 
 .add-bird-form {
@@ -136,13 +145,33 @@ input {
   border-radius: 5px;
 }
 
-
-
 #submit {
   width: 100%;
   color: #eef7f1;
   background-color: #306645;
   margin-bottom: 25px;
   margin-top: 15px;
-  box-shadow: 0 2px 1px #306645;
+}
+
+#submit:hover {
+  color: #eef7f1;
+  background-color: #418b5d;
+  border: 1px solid #418b5d;
+}
+
+a {
+  text-decoration: none;
+}
+
+header a {
+  color: #4c4c4c;
+}
+
+header a:visited {
+  color: #4c4c4c;
+}
+
+header:hover {
+  opacity: 85%;
+  transition: all .15s ease;
 }

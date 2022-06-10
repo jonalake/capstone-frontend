@@ -1,14 +1,11 @@
 <header>
-  <h1>Bird<b>Tracker</b></h1>
-  <!-- <nav>
-    <button>Add Birds</button>
-    <button>Filter</button>
-  </nav> -->
+  <a routerLink="/birds">
+    <h1>Bird<b>Tracker</b></h1>
+  </a>
 </header>
 
 <main>
-  <app-add-bird></app-add-bird>
-  <app-bird-list></app-bird-list>
+  <router-outlet></router-outlet>
 </main>
 
 
