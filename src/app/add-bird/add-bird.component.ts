@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Bird } from '../bird.service';
+import { BirdService } from '../bird.service';
 
 @Component({
   selector: 'app-add-bird',
@@ -11,7 +11,7 @@ export class AddBirdComponent implements OnInit {
   quantity!: number;
   location!: string;
 
-  constructor() { }
+  constructor(private birdService: BirdService) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +22,7 @@ export class AddBirdComponent implements OnInit {
       quantity: this.quantity,
       location: this.location,
     }
-    console.log(newBird)
+    this.birdService.addBird(newBird)
 
     this.name = "";
     this.quantity = 1;

@@ -1,9 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 export interface Bird {
   id: number;
+  name: string;
+  quantity: number;
+  location: string;
+}
+
+interface NewBird {
   name: string;
   quantity: number;
   location: string;
@@ -17,26 +28,21 @@ interface BirdsResponse {
   providedIn: 'root'
 })
 export class BirdService {
-  birds: Bird[] = [{
-    id: 1,
-    name: "American Robin",
-    quantity: 3,
-    location: "Colorado Springs"
-  },{
-    id: 2,
-    name: "Mountain Chickadee",
-    quantity: 2,
-    location: "Woodland Park"
-  },{
-    id: 3,
-    name: "Western Tanager",
-    quantity: 1,
-    location: "Colorado Springs"
-  }]
-
   constructor(private http: HttpClient) { }
 
   getBirds() {
-    return this.http.get<BirdsResponse>("../assets/birds.json");
+    return this.http.get<BirdsResponse>("http://localhost:8080/birds");
+  }
+
+  deleteBird(id: number) {
+    return this.http.delete<Bird>(`http://localhost:8080/birds/${id}`).subscribe()
+  }
+
+  addBird(newBird: NewBird) {
+    return this.http.post("http://localhost:8080/birds", newBird, httpOptions).subscribe()
+  }
+
+  editBird(updatedBird: Bird) {
+    return this.http.put(`http://localhost:8080/birds/${updatedBird.id}`, updatedBird, httpOptions).subscribe()
   }
 }

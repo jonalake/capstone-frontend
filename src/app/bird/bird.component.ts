@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Bird, BirdService } from '../bird.service';
 
@@ -37,12 +37,13 @@ export class BirdComponent implements OnInit {
   }
 
   editBird() {
-
+    this.birdService.editBird(this.bird)
     this.toggleEdit()
   }
 
-  deleteBird() {
-    this.router.navigate(['/birds'])
+  onDelete() {
+    this.birdService.deleteBird(+this.id);
+    this.router.navigate(['/birds']).then(() => {window.location.reload()})
   }
 
 }
