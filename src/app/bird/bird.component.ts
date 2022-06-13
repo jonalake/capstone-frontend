@@ -25,7 +25,7 @@ export class BirdComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get("id") || ""
 
-    this.birdService.getBirds().subscribe(response => {
+    this.birdService.getBirds.subscribe(response => {
       this.birds = response.birds;
       this.bird = this.birds.find(bird => bird.id === +this.id)
     })

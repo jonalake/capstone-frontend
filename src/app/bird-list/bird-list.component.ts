@@ -12,7 +12,7 @@ export class BirdListComponent implements OnInit {
   constructor(private birdService: BirdService) { }
 
   ngOnInit(): void {
-    this.birdService.getBirds().subscribe(response => {
+    this.birdService.getBirds.subscribe(response => {
       return this.birds = response.birds
     })
   }
