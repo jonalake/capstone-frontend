@@ -3,6 +3,7 @@
   <h2>{{bird?.name}}</h2>
   <p id="quantity">Number Seen: {{bird?.quantity}}</p>
   <p id="location">Location: {{bird?.location}}</p>
+  <p id="date">Date: {{bird?.date}}</p>
   <form *ngIf="edit" #editBirdForm="ngForm" class="edit-bird-form" (ngSubmit)="editBird()">
     <label for="name">Name</label>
     <input type="text" name="name" id="name" placeholder="American Robin, etc." [(ngModel)]="bird.name" required>
@@ -10,6 +11,8 @@
     <input type="number" name="quantity" id="quantity" placeholder="1" min="1" [(ngModel)]="bird.quantity" required>
     <label for="location">Location</label>
     <input type="text" name="location" id="location" placeholder="Denver, etc." [(ngModel)]="bird.location" required>
+    <label for="date">Date</label>
+    <input type="date" name="date" id="date" [(ngModel)]="bird.date" required>
     <button id="submit" type="submit">Update Bird</button>
   </form>
   <button *ngIf="!edit" (click)="toggleEdit()">Edit Bird</button>

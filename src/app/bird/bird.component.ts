@@ -28,6 +28,9 @@ export class BirdComponent implements OnInit {
     this.birdService.getBirds.subscribe(response => {
       this.birds = response.birds;
       this.bird = this.birds.find(bird => bird.id === +this.id)
+      if (this.bird === undefined) {
+        this.router.navigate(['/404'])
+      }
     })
 
   }

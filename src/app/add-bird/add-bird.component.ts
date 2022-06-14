@@ -17,16 +17,13 @@ export class AddBirdComponent implements OnInit {
   }
 
   addBird() {
-    this.birdService.getLocation()
-    const newBird = {
+    const bird = {
       name: this.name,
       quantity: this.quantity,
-      location: this.location,
     }
-    this.birdService.addBird(newBird)
+    this.birdService.addBird(bird)
 
     this.name = "";
     this.quantity = 1;
-    this.location = "";
   }
 }

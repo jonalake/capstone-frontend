@@ -38,7 +38,7 @@ h2 {
 
 h3 {
   font-weight: 600;
-  margin-top: 55px;
+  margin-top: 38px;
   margin-bottom: 20px;
 }
 
@@ -48,7 +48,7 @@ p {
 
 h3,
 p {
-  margin-left: 25px;
+  margin-left: 75px;
 }
 
 li {
@@ -58,7 +58,6 @@ li {
 .bird-listing {
   display: grid;
   width: 500px;
-  grid-gap: 50px;
   grid-template-rows: auto 1fr;
   grid-template-columns: 150px 1fr;
   margin-bottom: 24px;

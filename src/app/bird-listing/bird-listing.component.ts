@@ -9,6 +9,7 @@ export class BirdListingComponent implements OnInit {
   @Input() name!: string;
   @Input() quantity!: number;
   @Input() location!: string;
+  @Input() date!: string;
 
   constructor() { }
 

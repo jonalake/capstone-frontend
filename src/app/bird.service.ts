@@ -13,20 +13,21 @@ export interface Bird {
   name: string;
   quantity: number;
   location: string;
+  date: string;
 }
 
 interface NewBird {
   name: string;
   quantity: number;
-  location: string;
 }
 
 interface BirdsResponse {
   birds: Bird[];
 }
 
-interface IpResponse {
-  ip: string;
+interface LocationResponse {
+  region: string,
+	city: string
 }
 
 const birdsEndpoint = environment.birdsEndpoint;
@@ -35,9 +36,7 @@ const birdsEndpoint = environment.birdsEndpoint;
   providedIn: 'root'
 })
 export class BirdService {
-  ipAddress!: string;
-  apiKey: string = "b6c8d6cbabe24c6c8e6223207220604";
-
+  location!: LocationResponse;
   constructor(private http: HttpClient) { }
 
   get getBirds() {
@@ -45,20 +44,24 @@ export class BirdService {
   }
 
   getLocation() {
-    this.http.get<IpResponse>('https://api.ipify.org/?format=json').subscribe(response => {
-      this.ipAddress = response.ip;
-      this.http.get<any>(`https://api.weatherapi.com/v1/forecast.json?key=${this.apiKey}&q=${this.ipAddress}`).subscribe(response => {
-        console.log(response)
-      })
-    })
+    return this.http.get<LocationResponse>('http://ip-api.com/json/')
   }
 
   deleteBird(id: number) {
     return this.http.delete<Bird>(`${birdsEndpoint}/${id}`).subscribe()
   }
 
-  addBird(newBird: NewBird) {
-    return this.http.post(`${birdsEndpoint}`, newBird, httpOptions).subscribe()
+  addBird(bird: NewBird) {
+    this.getLocation().subscribe(location => {
+      const newBird = {
+        name: bird.name,
+        quantity: bird.quantity,
+        location: `${location.city}, ${location.region}`,
+        date: `${new Date().getFullYear()}-${('0' + (new Date().getMonth() + 1)).slice(-2)}-${('0' + new Date().getDate()).slice(-2)}`
+      }
+      console.log(newBird)
+      return this.http.post(`${birdsEndpoint}`, newBird, httpOptions).subscribe()
+    })
   }
 
   editBird(updatedBird: Bird) {
