@@ -16,7 +16,8 @@ export class BirdListComponent implements OnInit {
 
   ngOnInit(): void {
     this.birdService.getBirds.subscribe(response => {
-      return this.birds = response.birds, this.filteredBirds = response.birds
+      return this.birds = response.birds,
+        this.filteredBirds = response.birds
     })
   }
 
@@ -28,8 +29,8 @@ export class BirdListComponent implements OnInit {
 
   searchBirds() {
     this.filteredBirds = this.birds.filter(bird =>
-      bird.name.includes(this.search) ||
-      bird.location.includes(this.search) ||
+      bird.name.toLowerCase().includes(this.search.toLowerCase()) ||
+      bird.location.toLowerCase().includes(this.search.toLowerCase()) ||
       bird.date.includes(this.search)
     )
   }

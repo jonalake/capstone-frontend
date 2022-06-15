@@ -9,7 +9,6 @@ import { BirdService } from '../bird.service';
 export class AddBirdComponent implements OnInit {
   name!: string;
   quantity!: number;
-  location!: string;
 
   constructor(private birdService: BirdService) { }
 
@@ -17,6 +16,10 @@ export class AddBirdComponent implements OnInit {
   }
 
   addBird() {
+    if (!this.name || !this.quantity) {
+      alert("Please complete all fields")
+      return
+    }
     const bird = {
       name: this.name,
       quantity: this.quantity,

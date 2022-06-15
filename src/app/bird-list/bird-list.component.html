@@ -10,7 +10,7 @@
     <button (click)="toggleSearch()">Search</button>
 </div>
 <ul *ngIf="!searchActive">
-  <li *ngFor="let bird of birds">
+  <li *ngFor="let bird of birds.reverse()">
     <a routerLink="/birds/{{bird.id}}">
       <app-bird-listing
         [name]="bird.name"
@@ -22,7 +22,7 @@
   </li>
 </ul>
 <ul *ngIf="searchActive">
-    <li *ngFor="let bird of filteredBirds">
+    <li *ngFor="let bird of filteredBirds.reverse()">
       <a routerLink="/birds/{{bird.id}}">
         <app-bird-listing
           [name]="bird.name"
