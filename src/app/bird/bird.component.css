@@ -28,3 +28,7 @@ button+button:hover {
   color: #eef7f1;
   transition: all .15s ease;
 }
+
+.bird-details {
+  justify-items: left;
+}

@@ -1,11 +1,15 @@
 <h2>Birds</h2>
+<form *ngIf="searchActive" #searchForm="ngForm" class="search-form">
+  <label for="name"></label>
+  <input type="text" name="search" id="search" placeholder="Search for Name, Location, Date" [(ngModel)]="search" (keyup)="searchBirds()">
+</form>
 <div class="controls">
     <a routerLink="/add">
       <button>Add Birds</button>
     </a>
-    <button>Filter</button>
+    <button (click)="toggleSearch()">Search</button>
 </div>
-<ul>
+<ul *ngIf="!searchActive">
   <li *ngFor="let bird of birds">
     <a routerLink="/birds/{{bird.id}}">
       <app-bird-listing
@@ -16,4 +20,16 @@
       ></app-bird-listing>
     </a>
   </li>
+</ul>
+<ul *ngIf="searchActive">
+    <li *ngFor="let bird of filteredBirds">
+      <a routerLink="/birds/{{bird.id}}">
+        <app-bird-listing
+          [name]="bird.name"
+          [quantity]="bird.quantity"
+          [location]="bird.location"
+          [date]="bird.date"
+        ></app-bird-listing>
+      </a>
+    </li>
 </ul>

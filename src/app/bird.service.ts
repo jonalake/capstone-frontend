@@ -59,7 +59,6 @@ export class BirdService {
         location: `${location.city}, ${location.region}`,
         date: `${new Date().getFullYear()}-${('0' + (new Date().getMonth() + 1)).slice(-2)}-${('0' + new Date().getDate()).slice(-2)}`
       }
-      console.log(newBird)
       return this.http.post(`${birdsEndpoint}`, newBird, httpOptions).subscribe()
     })
   }

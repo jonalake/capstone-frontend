@@ -1,9 +1,11 @@
 <div class="bird">
   <img src="../../assets/bird.png" alt="{{bird?.name}}">
   <h2>{{bird?.name}}</h2>
-  <p id="quantity">Number Seen: {{bird?.quantity}}</p>
-  <p id="location">Location: {{bird?.location}}</p>
-  <p id="date">Date: {{bird?.date}}</p>
+  <div class="bird-details">
+    <p id="quantity">Number Seen: {{bird?.quantity}}</p>
+    <p id="location">Location: {{bird?.location}}</p>
+    <p id="date">Date: {{bird?.date}}</p>
+  </div>
   <form *ngIf="edit" #editBirdForm="ngForm" class="edit-bird-form" (ngSubmit)="editBird()">
     <label for="name">Name</label>
     <input type="text" name="name" id="name" placeholder="American Robin, etc." [(ngModel)]="bird.name" required>
