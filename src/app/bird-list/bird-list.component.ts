@@ -11,13 +11,17 @@ export class BirdListComponent implements OnInit {
   birds: Bird[] = [];
   filteredBirds: Bird[] = [];
   searchActive: boolean = false;
+  loading: boolean = true;
 
   constructor(private birdService: BirdService) { }
 
   ngOnInit(): void {
     this.birdService.getBirds.subscribe(response => {
-      return this.birds = response.birds,
-        this.filteredBirds = response.birds
+      this.birds = response.birds
+      this.filteredBirds = response.birds
+      return this.birds.reverse(),
+        this.filteredBirds.reverse(),
+        this.loading = false;
     })
   }
 

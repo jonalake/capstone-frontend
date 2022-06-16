@@ -6,3 +6,12 @@ input {
   padding: 10px;
   margin-bottom: 25px;
 }
+
+.spinner {
+  display: flex;
+  justify-content: center;
+}
+
+.spinner img {
+  max-width: 90px;
+}

@@ -40,10 +40,6 @@ export class BirdComponent implements OnInit {
   }
 
   editBird() {
-    if (!this.name || !this.quantity) {
-      alert("Please complete all fields")
-      return
-    }
     this.birdService.editBird(this.bird)
     this.toggleEdit()
   }

@@ -16,10 +16,6 @@ export class AddBirdComponent implements OnInit {
   }
 
   addBird() {
-    if (!this.name || !this.quantity) {
-      alert("Please complete all fields")
-      return
-    }
     const bird = {
       name: this.name,
       quantity: this.quantity,
