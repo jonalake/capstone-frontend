@@ -10,28 +10,10 @@
     <button (click)="toggleSearch()">Search</button>
 </div>
 <ul *ngIf="!searchActive">
-  <li *ngFor="let bird of birds">
-    <a routerLink="/birds/{{bird.id}}">
-      <app-bird-listing
-        [name]="bird.name"
-        [quantity]="bird.quantity"
-        [location]="bird.location"
-        [date]="bird.date"
-      ></app-bird-listing>
-    </a>
-  </li>
+  <app-bird-lister [birds]="birds.reverse()"></app-bird-lister>
 </ul>
 <ul *ngIf="searchActive">
-    <li *ngFor="let bird of filteredBirds">
-      <a routerLink="/birds/{{bird.id}}">
-        <app-bird-listing
-          [name]="bird.name"
-          [quantity]="bird.quantity"
-          [location]="bird.location"
-          [date]="bird.date"
-        ></app-bird-listing>
-      </a>
-    </li>
+    <app-bird-lister [birds]="filteredBirds.reverse()"></app-bird-lister>
 </ul>
 <div *ngIf="loading" class="spinner">
   <img src="../../assets/loading.gif" alt="Loading Spinner">

@@ -17,10 +17,8 @@ export class BirdListComponent implements OnInit {
 
   ngOnInit(): void {
     this.birdService.getBirds.subscribe(response => {
-      this.birds = response.birds
-      this.filteredBirds = response.birds
-      return this.birds.reverse(),
-        this.filteredBirds.reverse(),
+      return this.birds = response.birds.reverse(),
+        this.filteredBirds = response.birds.reverse(),
         this.loading = false;
     })
   }
