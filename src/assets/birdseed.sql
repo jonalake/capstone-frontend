@@ -60,4 +60,6 @@ INSERT INTO bird (id, name, quantity, location, date) VALUES (
   29, 'Bullock''s Oriole', 3, 'Colorado Springs, CO', '2022-06-13'
 ), (
   30, 'Black-crowned Night-Heron', 1, 'Fountain, CO', '2022-06-14'
+), (
+  31, 'American Robin', 1, 'Colroado Springs, CO', '2022-06-16'
 );
